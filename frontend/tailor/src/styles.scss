@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+    width: 100vw;
+    height: 200vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+:root{
+    --main-heading:'Avenir LT Std 65'
+}

@@ -1,0 +1,7 @@
+<div  class="header-container" [ngClass]="movesUpHeader ?'scroll-up': (movesDownHeader?'scroll-down':'')" >
+    <ul class="ul-list">
+        <li *ngFor="let header of global.headerSections" [routerLink]="header.link" >
+            {{header.headerName}}
+        </li>
+    </ul>
+</div>
