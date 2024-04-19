@@ -2,36 +2,50 @@
     <h1>
         Register Form
     </h1>
-    <form class="form-container">
+    <form class="form-container" [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div>
             <label for="name">
                 Your Name
             </label>
-            <input  placeholder="Enter your Name" id="name"/>
+            <input  placeholder="Enter your Name" id="name" formControlName="name" value="name"/>
         </div>
         <div>
             <label for="mail">
                 Your Mail
             </label>
-            <input  placeholder="Enter your Mail" id="mail"/>
+            <input  placeholder="Enter your Mail" id="mail" formControlName="mail"/>
         </div>
         <div>
             <label for="password">
                 Your Password
             </label>
-            <input  placeholder="Enter your Password" id="password"/>
+            <input  placeholder="Enter your Password" id="password" formControlName="password"/>
         </div>
         <div>
             <label for="phoneno">
                 Your Phone Number   
             </label>
-            <input  placeholder="Enter your Phone No" id="phoneno"/>
+            <input  placeholder="Enter your Phone No" id="phoneno" formControlName="phone"/>
         </div>
        <div class="button-container">
-        <button>
+        <button type="submit" >
             Submit
         </button>
        </div>
+       <div *ngIf="(myForm.get('name').invalid && myForm.get('name').touched) 
+       || (myForm.get('mail').invalid && myForm.get('mail').touched)
+       || (myForm.get('password').invalid && myForm.get('password').touched)
+       || (myForm.get('phone').invalid && myForm.get('phone').touched)
+       " class="error-container" >
+            <div *ngIf="myForm.get('name').errors?.required
+            || myForm.get('mail').errors?.required
+            || myForm.get('password').errors?.required
+            || myForm.get('phone').errors?.required
+            ">
+                Please don not empty Input fields!
+            </div>
+        </div>
+       
 
     </form>
 </div>
