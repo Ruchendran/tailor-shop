@@ -10,6 +10,8 @@ app.use(cors());
 let db=null;
 sqlite3
 const jwtToken=require("jsonwebtoken");
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 initiate=async()=>{
     try{
@@ -46,6 +48,9 @@ app.post("/post",async(request,response)=>{
     )
     `;
     const final=await db.run(que);
-    response.send("Successfully created user.");
+    let data={
+        statusCode:200
+    }
+    response.json(data);
 
 })

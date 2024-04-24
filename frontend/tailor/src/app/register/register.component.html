@@ -7,32 +7,32 @@
             <label for="name">
                 Your Name
             </label>
-            <input  placeholder="Enter your Name" id="name" formControlName="name" value="name"/>
+            <input tabindex="1"  placeholder="Enter your Name" id="name" formControlName="name" value="name"/>
         </div>
         <div>
             <label for="mail">
                 Your Mail
             </label>
-            <input  placeholder="Enter your Mail" id="mail" formControlName="mail"/>
+            <input tabindex="2"  placeholder="Enter your Mail" id="mail" formControlName="mail"/>
         </div>
         <div>
             <label for="password">
                 Your Password
             </label>
-            <input  placeholder="Enter your Password" id="password" formControlName="password"/>
+            <input tabindex="3" placeholder="Enter your Password" id="password" formControlName="password"/>
         </div>
         <div>
             <label for="phoneno">
                 Your Phone Number   
             </label>
-            <input  placeholder="Enter your Phone No" id="phoneno" formControlName="phone"/>
+            <input tabindex="4"  placeholder="Enter your Phone No" id="phoneno" formControlName="phone"/>
         </div>
        <div class="button-container">
         <button type="submit" >
             Submit
         </button>
        </div>
-       <div *ngIf="(myForm.get('name').invalid && myForm.get('name').touched) 
+       <!-- <div *ngIf="(myForm.get('name').invalid && myForm.get('name').touched) 
        || (myForm.get('mail').invalid && myForm.get('mail').touched)
        || (myForm.get('password').invalid && myForm.get('password').touched)
        || (myForm.get('phone').invalid && myForm.get('phone').touched)
@@ -44,6 +44,9 @@
             ">
                 Please don not empty Input fields!
             </div>
+        </div> -->
+        <div *ngIf="emptyInput" class="error-container" >
+            Please Fill input fields!
         </div>
        
 

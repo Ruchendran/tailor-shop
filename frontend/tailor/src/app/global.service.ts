@@ -8,22 +8,23 @@ export class GlobalService {
   headerSections:any=[
     {
       headerName:"Home",
-      link:'home'
+      link:'/'
     },
     {
       headerName:"Shop",
-      link:'shop'
+      link:'/shop'
     },
     {
       headerName:"Log In",
-      link:'login'
+      link:'/login'
     },
     {
       headerName:"Register",
-      link:'register'
+      link:'/register'
     },
     {
-      headerName:"Contact Us"
+      headerName:"Contact Us",
+      link:'/contact-us'
     }
 
   ]

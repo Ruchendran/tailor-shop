@@ -6,10 +6,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 110vh;
+    position: relative;
+    background-image: url("../../assets/images/bg-image.png");
+    background-size: cover;
+    background-repeat: repeat;
     
 }
-
+// ::selection{
+//     background-color:red;
+// }
 
 .form-container{
     width: 600px;
@@ -30,6 +36,8 @@ width: 200px;
 height: 40px;
 border-radius: 5px;
 padding-left: 10px;
+outline: none;
+background-color:transparent;
 }
 
 .form-container>div>label{
@@ -42,4 +50,66 @@ padding-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.button-container{
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container>button{
+    font-family: var(--main-heading);
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    border-style: none;
+    position: relative;
+    z-index: 1;
+    overflow:hidden;
+    border-radius: 5px;
+    font-size:var(--content-size);
+    font-weight: bold;
+    border-style: solid;
+    border-color:#000000;
+}
+
+.button-container>button::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: -20px;
+    width: 0px;
+    height: 40px;
+    background-color:#000000;
+    transform: skewX(45deg);
+    z-index: -2;
+    transition: 0.3s ;
+}
+
+.button-container>button:hover::before{
+   transition: 0.3s;
+    width: 165px;
+}
+
+
+.button-container>button:hover{
+    color:#ffffff ;
+    
+}
+
+@media screen and (max-width:672px){
+    .register-container
+    {
+        top: 0px;
+    }
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

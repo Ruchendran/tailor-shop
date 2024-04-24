@@ -1,6 +1,6 @@
 <div  class="header-container" [ngClass]="movesUpHeader ?'scroll-up': (movesDownHeader?'scroll-down':'')" >
     <ul class="ul-list">
-        <li *ngFor="let header of global.headerSections" [routerLink]="header.link" >
+        <li *ngFor="let header of global.headerSections" [routerLink]="header.link"  [routerLinkActive]="'highlighted-menu'" >
             {{header.headerName}}
         </li>
     </ul>
